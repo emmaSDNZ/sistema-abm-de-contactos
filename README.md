@@ -36,34 +36,36 @@ Cada integrante del equipo recorre **el ciclo completo de desarrollo**, incluyen
 
 
 proyecto_abm_contactos/
+## 🗂 Estructura del Repositorio
 
-
-├── src/                      # Código fuente
-│   ├── main.py               # Entrada principal (GUI)
-│   ├── contacto.py           # Clase Contacto
-│   ├── grupo.py              # Clase Grupo
-│   ├── historial.py          # Clase Historial
-│   ├── database_manager.py   # Persistencia SQLite
-│   └── services.py           # Lógica de negocio
-├── tests/                    # Pruebas unitarias y funcionales
+```text
+proyecto_abm_contactos/
+├── src/                        # Código fuente
+│   ├── main.py                 # Entrada principal (GUI)
+│   ├── contacto.py             # Clase Contacto
+│   ├── grupo.py                # Clase Grupo
+│   ├── historial.py            # Clase Historial
+│   ├── database_manager.py     # Persistencia SQLite
+│   └── services.py             # Lógica de negocio
+├── tests/                      # Pruebas unitarias y funcionales
 │   ├── test_contacto.py
 │   ├── test_grupo.py
 │   ├── test_historial.py
 │   └── test_services.py
-├── docs/                     # Documentación
-│   ├── diagramas/            # Diagramas UML y de flujo
-│   ├── informe.pdf           # Documento de diseño profesional
-│   └── manual_usuario.pdf    # Guía de uso del sistema
-├── data/                     # Base de datos y exportaciones CSV
+├── docs/                       # Documentación
+│   ├── diagramas/              # Diagramas UML y de flujo
+│   ├── informe.pdf             # Documento de diseño profesional
+│   └── manual_usuario.pdf      # Guía de uso del sistema
+├── data/                       # Base de datos y exportaciones CSV
 │   ├── contactos.db
 │   └── export_csv/
-├── scripts/                  # Scripts de inicialización y migración
+├── scripts/                    # Scripts de inicialización y migración
 │   └── init_db.py
-├── .gitignore                # Archivos y carpetas a ignorar
-├── README.md                 # Este archivo
-├── requirements.txt          # Librerías necesarias
-└── setup.py (opcional)       # Para empaquetar proyecto como módulo
-
+├── .gitignore                  # Archivos y carpetas a ignorar
+├── README.md                   # Este archivo
+├── requirements.txt            # Librerías necesarias
+└── setup.py (opcional)         # Para empaquetar proyecto como módulo
+``` 
 ---
 
 ##  🏗 Arquitectura del Sistema
