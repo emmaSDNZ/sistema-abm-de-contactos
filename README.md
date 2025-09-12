@@ -1,4 +1,4 @@
-# 🚀 ABM de Contactos – Proyecto Profesional Escalable
+# 🚀 ABM de Contactos – Proyecto Profesional
 
 ## 📌 Descripción General
 
