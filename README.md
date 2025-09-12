@@ -34,32 +34,34 @@ Cada integrante del equipo recorre **el ciclo completo de desarrollo**, incluyen
 
 ## 🗂 Estructura del Repositorio
 
+
 proyecto_abm_contactos/
-├── src/                  # Código fuente
-│   ├── main.py           # Entrada principal (GUI)
-│   ├── contacto.py       # Clase Contacto
-│   ├── grupo.py          # Clase Grupo
-│   ├── historial.py      # Clase Historial
-│   ├── database_manager.py # Persistencia SQLite
-│   ├── services.py       # Lógica de negocio
-├── tests/                # Pruebas unitarias y funcionales
+
+├── src/                      # Código fuente
+│   ├── main.py               # Entrada principal (GUI)
+│   ├── contacto.py           # Clase Contacto
+│   ├── grupo.py              # Clase Grupo
+│   ├── historial.py          # Clase Historial
+│   ├── database_manager.py   # Persistencia SQLite
+│   └── services.py           # Lógica de negocio
+├── tests/                    # Pruebas unitarias y funcionales
 │   ├── test_contacto.py
 │   ├── test_grupo.py
 │   ├── test_historial.py
-│   ├── test_services.py
-├── docs/                 # Documentación
-│   ├── diagramas/        # Diagramas UML y de flujo
-│   ├── informe.pdf       # Documento de diseño profesional
-│   ├── manual_usuario.pdf # Guía de uso del sistema
-├── data/                 # Base de datos y exportaciones CSV
+│   └── test_services.py
+├── docs/                     # Documentación
+│   ├── diagramas/            # Diagramas UML y de flujo
+│   ├── informe.pdf           # Documento de diseño profesional
+│   └── manual_usuario.pdf    # Guía de uso del sistema
+├── data/                     # Base de datos y exportaciones CSV
 │   ├── contactos.db
-│   ├── export_csv/
-├── scripts/              # Scripts de inicialización y migración
-│   ├── init_db.py
-├── .gitignore            # Archivos y carpetas a ignorar
-├── README.md             # Este archivo
-├── requirements.txt      # Librerías necesarias
-└── setup.py (opcional)   # Para empaquetar proyecto como módulo
+│   └── export_csv/
+├── scripts/                  # Scripts de inicialización y migración
+│   └── init_db.py
+├── .gitignore                # Archivos y carpetas a ignorar
+├── README.md                 # Este archivo
+├── requirements.txt          # Librerías necesarias
+└── setup.py (opcional)       # Para empaquetar proyecto como módulo
 
 ---
 
@@ -100,34 +102,33 @@ Cada uno de los 6 integrantes del equipo siguió un flujo de trabajo completo pa
 ## ⚙ Instalación y Ejecución
 Sigue estos pasos para poner en marcha la aplicación en tu entorno local:
 
-Clonar el repositorio:
+* Clonar el repositorio:
 
-Bash
+git clone [https://github.com/emmaSDNZ/sistema-abm-de-contactos](https://github.com/emmaSDNZ/sistema-abm-de-contactos)
 
-git clone [https://github.com/emmaSDNZ/sistema-abm-de-contactos](https://github.com/emmaSDNZ/sistema-abm-de-contactost)
 cd proyecto_abm_contactos
-Crear y activar un entorno virtual (recomendado):
 
-Bash
+* Crear y activar un entorno virtual (recomendado):
 
 python -m venv venv
+
 # En Linux / Mac
+
 source venv/bin/activate
+
 # En Windows
 venv\Scripts\activate
-Instalar las dependencias:
 
-Bash
+* Instalar las dependencias:
 
 pip install -r requirements.txt
-Inicializar la base de datos:
 
-Bash
+* Inicializar la base de datos:
 
 python scripts/init_db.py
-Ejecutar la aplicación:
 
-Bash
+* Ejecutar la aplicación:
+
 
 python src/main.py
 
@@ -187,5 +188,7 @@ Instructor: Alejandro Mainero
 
 Autores: 
 Isaias Emanuel Sudañez [https://github.com/emmaSDNZ](https://github.com/emmaSDNZ)
+
 Joaquín Pedrone Pfeiffer, [LINK GITHUB]
+
 Christian Quispe, [LINK GITHUB] 
