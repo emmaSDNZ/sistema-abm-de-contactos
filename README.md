@@ -56,6 +56,7 @@ proyecto_abm_contactos/
 │   ├── diagramas/              # Diagramas UML y de flujo
 │   ├── informe.pdf             # Documento de diseño profesional
 │   └── manual_usuario.pdf      # Guía de uso del sistema
+│   └──Proyecto ABM de Contactos – Documento de Diseño.pdf      # Guia del Diseño del desarrollo
 ├── data/                       # Base de datos y exportaciones CSV
 │   ├── contactos.db
 │   └── export_csv/
