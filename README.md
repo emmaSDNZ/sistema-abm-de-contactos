@@ -106,35 +106,37 @@ Cada uno de los 6 integrantes del equipo siguió un flujo de trabajo completo pa
 Sigue estos pasos para poner en marcha la aplicación en tu entorno local:
 
 * Clonar el repositorio:
-
+```text
 git clone [https://github.com/emmaSDNZ/sistema-abm-de-contactos](https://github.com/emmaSDNZ/sistema-abm-de-contactos)
-
-cd proyecto_abm_contactos
+```
+```text
+cd /sistema-abm-de-contactos
+```
 
 * Crear y activar un entorno virtual (recomendado):
-
+```text
 python -m venv venv
-
+```
 # En Linux / Mac
-
 source venv/bin/activate
 
 # En Windows
 venv\Scripts\activate
 
 * Instalar las dependencias:
-
+```text
 pip install -r requirements.txt
+```
 
 * Inicializar la base de datos:
-
+```text
 python scripts/init_db.py
+```
 
 * Ejecutar la aplicación:
-
-
+```text
 python src/main.py
-
+```
 ---
 
 ## 🧪 Testing
@@ -147,10 +149,9 @@ Pruebas funcionales para las operaciones CRUD y la interacción con la GUI.
 
 Se recomienda utilizar pytest para la ejecución de las pruebas:
 
-Bash
-
+```text
 pytest tests/
-
+```
 ---
 
 ## 📊 Diagramas y Documentación
@@ -195,3 +196,7 @@ Isaias Emanuel Sudañez [https://github.com/emmaSDNZ](https://github.com/emmaSDN
 Joaquín Pedrone Pfeiffer, [LINK GITHUB]
 
 Christian Quispe, [LINK GITHUB] 
+Nombre4
+Nombre5
+Nombre6
+
