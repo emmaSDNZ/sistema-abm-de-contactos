@@ -106,9 +106,9 @@ Cada uno de los 6 integrantes del equipo siguió un flujo de trabajo completo pa
 Sigue estos pasos para poner en marcha la aplicación en tu entorno local:
 
 * Clonar el repositorio:
-```text
+
 git clone [https://github.com/emmaSDNZ/sistema-abm-de-contactos](https://github.com/emmaSDNZ/sistema-abm-de-contactos)
-```
+
 ```text
 cd /sistema-abm-de-contactos
 ```
