@@ -1,0 +1,25 @@
+Archivos y directorios temporales de Python
+pycache/
+*.pyc
+*.pyo
+*.pyd
+.venv
+venv/
+
+Base de datos SQLite
+*.db
+
+Exportaciones CSV
+data/export_csv/
+
+Archivos específicos de entornos de desarrollo
+.vscode/
+.idea/
+.env
+
+Archivos de log
+*.log
+
+Archivos del sistema
+.DS_Store
+Thumbs.db
