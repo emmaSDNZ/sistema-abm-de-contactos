@@ -4,6 +4,8 @@ pycache/
 *.pyo
 *.pyd
 .venv
+.db
+.csv
 venv/
 
 Base de datos SQLite

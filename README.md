@@ -2,202 +2,211 @@
 
 ## 📌 Descripción General
 
-El proyecto **ABM de Contactos** es un sistema de gestión de contactos desarrollado en **Python**, aplicando **Programación Orientada a Objetos (POO)**, con interfaz gráfica en **Tkinter** y persistencia de datos en **SQLite**.
+El proyecto **ABM de Contactos** es un sistema de gestión de contactos desarrollado en **Python**, aplicando **Programación Orientada a Objetos (POO)**, con interfaz CLI y persistencia de datos en **SQLite**.
 
-Este desarrollo tiene un enfoque profesional y escalable, aplicando **principios SOLID, modularidad, pruebas unitarias y documentación formal**, simulando el flujo completo de trabajo en un proyecto real de software.
+Este desarrollo tiene un enfoque profesional y escalable, aplicando **principios SOLID, modularidad y documentación formal**, simulando el flujo completo de trabajo en un proyecto real de software.
 
 El sistema permite:
 
--   **Alta** de nuevos contactos (nombre, apellido, teléfono, email).
--   **Baja** de contactos existentes.
--   **Modificación** de la información de contactos.
--   **Consulta y listado** de contactos.
--   Organización de contactos en **grupos** (Familia, Amigos, Trabajo).
--   **Historial de operaciones** sobre contactos.
--   **Exportación a CSV** para análisis externo.
+- Alta, baja, modificación y consulta de contactos.
+- Persistencia en SQLite + exportación de datasets.
+- Arquitectura modular con separación por capas.
+- Documentación UML y manual de usuario.
 
-Cada integrante del equipo recorre **el ciclo completo de desarrollo**, incluyendo diseño de base de datos, definición de clases y objetos, conexión con GUI, testing y documentación.
+Cada integrante del equipo recorre **el ciclo completo de desarrollo**, incluyendo diseño de base de datos, definición de clases y objetos, conexión con GUI y documentación.
 
 ---
 
 ## 🎯 Objetivos del Proyecto
 
-1.  Diseñar un sistema ABM escalable y modular con POO en Python.
-2.  Crear una interfaz gráfica funcional con Tkinter.
-3.  Implementar persistencia de datos en SQLite con operaciones CRUD.
-4.  Aplicar buenas prácticas profesionales: SOLID, modularidad, testing y documentación.
-5.  Documentar clases, métodos y flujos de datos.
-6.  Realizar pruebas unitarias y funcionales para garantizar calidad del software.
-7.  Generar experiencia profesional para CV y LinkedIn.
+1. Diseñar un sistema ABM escalable y modular con POO en Python.
+2. Crear una interfaz funcional (CLI) para la interacción con el usuario.
+3. Implementar persistencia de datos en SQLite con operaciones CRUD.
+4. Aplicar buenas prácticas profesionales: SOLID, modularidad y documentación.
+5. Documentar clases, métodos y flujos de datos.
+6. Generar experiencia profesional para CV y LinkedIn.
 
 ---
 
-## 🗂 Estructura del Repositorio
-
-
-proyecto_abm_contactos/
 ## 🗂 Estructura del Repositorio
 
 ```text
-proyecto_abm_contactos/
-├── src/                        # Código fuente
-│   ├── main.py                 # Entrada principal (GUI)
-│   ├── contacto.py             # Clase Contacto
-│   ├── grupo.py                # Clase Grupo
-│   ├── historial.py            # Clase Historial
-│   ├── database_manager.py     # Persistencia SQLite
-│   └── services.py             # Lógica de negocio
-├── tests/                      # Pruebas unitarias y funcionales
-│   ├── test_contacto.py
-│   ├── test_grupo.py
-│   ├── test_historial.py
-│   └── test_services.py
-├── docs/                       # Documentación
-│   ├── diagramas/              # Diagramas UML y de flujo
-│   ├── informe.pdf             # Documento de diseño profesional
-│   └── manual_usuario.pdf      # Guía de uso del sistema
-│   └──Proyecto ABM de Contactos – Documento de Diseño.pdf      # Guia del Diseño del desarrollo
-├── data/                       # Base de datos y exportaciones CSV
-│   ├── contactos.db
-│   └── export_csv/
-├── scripts/                    # Scripts de inicialización y migración
-│   └── init_db.py
-├── .gitignore                  # Archivos y carpetas a ignorar
-├── README.md                   # Este archivo
-├── requirements.txt            # Librerías necesarias
-└── setup.py (opcional)         # Para empaquetar proyecto como módulo
-``` 
+ABM-Contactos/
+│── docs/                         # Documentación profesional
+│   └── diseño.md                 # UML, diagramas, manual
+│
+│── src/                          # Código fuente modular
+│   │── __init__.py
+│   │
+│   ├── core/                     # Clases base y modelos abstractos
+│   │   ├── __init__.py
+│   │   ├── base_model.py         # Clase BaseModel
+│   │   └── auditable_model.py    # Clase AuditableModel
+│   │   └── base_dao.py.py        # Clase DAO
+│   │
+│   │
+│   ├── models/                   # Entidades principales
+│   │   ├── __init__.py
+│   │   ├── contacto.py
+│   │
+│   ├── services/                 # Lógica de negocio
+│   │   ├── __init__.py
+│   │   ├── contacto_service.py
+│   │
+│   ├── controllers/              # Coordinación entre GUI y Services
+│   │   ├── __init__.py
+│   │   └── contacto_controller.py
+│   │
+│   ├── gui/                      # CLI profesional
+│   │   ├── __init__.py
+│   │   ├── menu.py
+│   │   └── contacto_menu.py
+│   │
+│   ├── dao/                     # Persistencia y operaciones CRUD
+│   │   ├── __init__.py
+│   │   └── contacto_dao.py
+│   │
+│   └── config/                   # Configuración y base de datos
+│       ├── __init__.py
+│       └── db.py
+│
+│── scripts/                      # Scripts de inicialización y ayuda
+│   ├── init_db.py
+│   └── seed_data.py
+│
+│── .gitignore
+│── README.md
+└── requirements.txt
+````
+
 ---
 
-##  🏗 Arquitectura del Sistema
+## 🛠️ Tecnologías
 
-El sistema se basa en una arquitectura modular y escalable, con capas bien definidas para una clara separación de responsabilidades:
-
-*   Capa de GUI (Tkinter): main.py maneja la interacción directa con el usuario, mostrando la interfaz y capturando los eventos.
-
-*   Capa de Lógica / Servicios: services.py actúa como el "cerebro" del sistema, coordinando la comunicación entre la GUI y la base de datos, aplicando validaciones y reglas de negocio.
-
-*   Capa de Persistencia: database_manager.py gestiona la conexión con la base de datos SQLite, encargándose de las operaciones CRUD (Create, Read, Update, Delete) y el manejo de transacciones.
-
-*   Modelo de Datos: Las clases Contacto, Grupo e Historial representan las entidades del negocio, encapsulando sus atributos y la lógica específica de cada una.
-
-Cada integrante del equipo desarrolló y documentó el ciclo completo: desde el diseño de la clase hasta la persistencia y las pruebas de su funcionalidad.
+* Python 3.x
+* SQLite
+* UML (documentado en `/docs`)
 
 ---
 
-## 👥 Flujo de Trabajo por Integrante
+## 🏗 Arquitectura del Sistema
 
-Cada uno de los 6 integrantes del equipo siguió un flujo de trabajo completo para cada módulo asignado:
+El sistema se basa en una arquitectura **modular y escalable**, con capas bien definidas:
 
-1.  Diseño: Creación de diagramas de clases y modelo de datos para una comprensión clara de la estructura.
+* **Capa de GUI (CLI):** `src/gui/contacto_menu.py` muestra opciones y captura inputs del usuario.
+* **Capa de Controller:** coordina la comunicación entre GUI y Services (`src/controllers/`).
+* **Capa de Services:** implementa la lógica de negocio y validaciones (`src/services/`).
+* **Capa de DAO:** ejecuta operaciones CRUD sobre SQLite (`src/daos/`).
+* **Modelo de Datos:** las clases `Contacto`, `Grupo`, `Historial` representan entidades y encapsulan su lógica.
 
-2.  Desarrollo de clase / módulo: Implementación de la Programación Orientada a Objetos (POO) con documentación clara de atributos, métodos y sus funcionalidades.
+---
 
-3.  Conexión a base de datos: Implementación de las operaciones CRUD necesarias para la persistencia de datos.
+## 🌐 Flujo de Datos – Circuito Completo
 
-4.  Integración con GUI: Vinculación de la lógica del módulo con la interfaz gráfica para una experiencia de usuario fluida.
+```mermaid
+flowchart TD
+    A[Usuario interactúa con CLI] --> B[Controller]
+    B --> C[Service: lógica de negocio]
+    C --> D[DAO: operaciones CRUD]
+    D --> E[Base de Datos SQLite]
+    
+    E --> D
+    D --> C
+    C --> B
+    B --> A[Respuesta al usuario]
 
-5. Testing: Creación de pruebas unitarias y funcionales para asegurar la calidad y consistencia del software.
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#ffb,stroke:#333,stroke-width:2px
+    style E fill:#fab,stroke:#333,stroke-width:2px
+```
 
-6. Documentación: Descripción detallada del funcionamiento de los métodos, el flujo de datos y las decisiones de diseño.
+### 🔹 Explicación del Flujo
+
+1. **Usuario:** interactúa con el menú CLI (`src/gui/contacto_menu.py`).
+2. **Controller:** recibe inputs de la GUI y coordina los servicios (`src/controllers/contacto_controller.py`).
+3. **Service:** aplica reglas de negocio y validaciones (`src/services/contacto_service.py`).
+4. **DAO:** realiza las operaciones CRUD sobre SQLite (`src/daos/contacto_dao.py`).
+5. **Base de Datos:** almacena de forma persistente los datos (`src/config/db.py`).
+
+> Los resultados retornan desde la base de datos hacia la GUI pasando por DAO → Service → Controller → Usuario.
 
 ---
 
 ## ⚙ Instalación y Ejecución
+
 Sigue estos pasos para poner en marcha la aplicación en tu entorno local:
 
-* Clonar el repositorio:
+1. Clonar el repositorio:
 
-git clone [https://github.com/emmaSDNZ/sistema-abm-de-contactos](https://github.com/emmaSDNZ/sistema-abm-de-contactos)
-
-```text
-cd /sistema-abm-de-contactos
+```bash
+git clone https://github.com/emmaSDNZ/sistema-abm-de-contactos.git
+cd sistema-abm-de-contactos
 ```
 
-* Crear y activar un entorno virtual (recomendado):
-```text
+2. Crear y activar un entorno virtual:
+
+```bash
 python -m venv venv
-```
-# En Linux / Mac
+
+# Linux / Mac
 source venv/bin/activate
 
-# En Windows
+# Windows
 venv\Scripts\activate
+```
 
-* Instalar las dependencias:
-```text
+3. Instalar las dependencias:
+
+```bash
 pip install -r requirements.txt
 ```
 
-* Inicializar la base de datos:
-```text
+4. Inicializar la base de datos:
+
+```bash
 python scripts/init_db.py
 ```
 
-* Ejecutar la aplicación:
-```text
+5. Ejecutar la aplicación:
+
+```bash
 python src/main.py
 ```
----
 
-## 🧪 Testing
-
-El proyecto cuenta con un conjunto robusto de pruebas para garantizar su fiabilidad:
-
-Pruebas unitarias para cada clase y módulo de la lógica de negocio (tests/).
-
-Pruebas funcionales para las operaciones CRUD y la interacción con la GUI.
-
-Se recomienda utilizar pytest para la ejecución de las pruebas:
-
-```text
-pytest tests/
-```
 ---
 
 ## 📊 Diagramas y Documentación
-La documentación detallada es una parte crucial del proyecto:
 
-Diagramas UML: Diagramas de clases, secuencias y flujo de datos se encuentran en docs/diagramas/.
-
-Informe de Diseño Profesional: Un documento exhaustivo que detalla la arquitectura y las decisiones de diseño, disponible en docs/informe.pdf.
-
-Manual de Usuario: Una guía para la utilización del sistema, ubicada en docs/manual_usuario.pdf.
-
----
-
-
-## 🔄 Control de Versiones
-Se utiliza un flujo de trabajo de Git Flow simplificado para el control de versiones:
-
-main: La rama principal que contiene la versión estable y lista para producción.
-
-dev: La rama de desarrollo donde se integran todos los cambios de las diferentes funcionalidades.
-
-feature/ branches: Ramas dedicadas a cada nueva funcionalidad (ej. feature/gui, feature/db), creadas a partir de dev.
+* **Diagramas UML:** Diagramas de clases, secuencias y flujo de datos en `docs/diagramas/`.
+* **Informe de Diseño:** Documento con arquitectura y decisiones de diseño en `docs/informe.pdf`.
+* **Manual de Usuario:** Guía de utilización del sistema en `docs/manual_usuario.pdf`.
 
 ---
 
 ## 📂 Roles de Integrantes
 
-Cada integrante se encargó de desarrollar una porción de las clases y módulos, siguiendo el flujo de trabajo completo para una experiencia integral en el desarrollo de software.
+Cada integrante desarrolló un módulo completo siguiendo este flujo:
 
-Integrantes: [Nombre del Integrante 1], [Nombre del Integrante 2], [Nombre del Integrante 3], [Nombre del Integrante 4], [Nombre del Integrante 5], [Nombre del Integrante 6].
+1. Diseño UML y modelo de datos.
+2. Implementación de clases y lógica de negocio.
+3. Conexión con base de datos.
+4. Integración con GUI.
+5. Documentación completa del módulo.
 
-Ejemplo de Responsabilidad: Diseño de la clase Contacto, conexión con la base de datos, pruebas unitarias, integración con la GUI y documentación completa del módulo.
+**Integrantes:**
 
-📌 Contacto
-Este proyecto fue desarrollado para la Tecnicatura en Ciencias de Datos e Inteligencia Artificial.
+* Isaias Emanuel Sudañez [GitHub](https://github.com/emmaSDNZ)
+* Joaquín Pedrone Pfeiffer
+* Christian Quispe
+* Nombre4
+* Nombre5
+* Nombre6
+
+Tecnicatura en Ciencias de Datos e Inteligencia Artificial, 
 
 Instructor: Alejandro Mainero
 
-Autores: 
-Isaias Emanuel Sudañez [https://github.com/emmaSDNZ](https://github.com/emmaSDNZ)
-
-Joaquín Pedrone Pfeiffer, [LINK GITHUB]
-
-Christian Quispe, [LINK GITHUB] 
-Nombre4
-Nombre5
-Nombre6
+```
 
