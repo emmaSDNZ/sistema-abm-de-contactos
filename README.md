@@ -157,19 +157,7 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-3. Instalar las dependencias:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Inicializar la base de datos:
-
-```bash
-python scripts/init_db.py
-```
-
-5. Ejecutar la aplicación:
+3. Ejecutar la aplicación:
 
 ```bash
 python main.py
