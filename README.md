@@ -172,7 +172,7 @@ python scripts/init_db.py
 5. Ejecutar la aplicación:
 
 ```bash
-python src/main.py
+python main.py
 ```
 
 ---
